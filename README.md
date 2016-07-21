@@ -1,3 +1,3 @@
 # JS_codewars
 
-Collection of problems from Codewars done in JS
+Collection of problems from Codewars completed in JS
