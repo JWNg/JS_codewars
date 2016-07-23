@@ -12,3 +12,13 @@
 #
 #If the today is later from last than the cycleLength, the function should return true. We consider it to be late if the number of passed days is larger than the cycleLength. Otherwise return false.
 #FUNDAMENTALS
+
+
+function periodIsLate(last, today, cycleLength)
+{
+  var dif = today - last
+  var days = dif/(60*60*24*1000)
+  if (days > cycleLength) {
+    return true; } else {
+    return false; }
+}
