@@ -10,3 +10,9 @@
 //countSquares(2) --> 26
 //countSquares(4) --> 98
 
+var countSquares = function(cuts){
+  if (cuts === 0) {return 1};
+  var unpainted = Math.pow((cuts-1), 3),
+      total = Math.pow((cuts+1), 3);
+  return (total - unpainted);
+}
