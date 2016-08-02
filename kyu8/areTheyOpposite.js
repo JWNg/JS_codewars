@@ -32,3 +32,19 @@
 //#11: Three increasing numbers
 //#12: Split integer
 //#13: A game named "Five,Ten,Fifteen,twenty"//
+function isOpposite(s1,s2){
+  if (s1 === "" || s2 === "") {return false};
+
+  function toOppositeCase(char) {
+    (/[a-z]/).test(char) ? char.toUpperCase() : char.toLowerCase();
+  }
+
+  var oppositeS1 = "";
+
+  for (var i = 0; i <= s1.length; i ++) {
+    oppositeS1 += toOppositeCase(s1[i]); 
+  }
+  
+  if (oppositeS1 === s2) {return true};
+  return false;
+}
