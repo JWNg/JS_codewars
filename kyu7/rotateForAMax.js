@@ -15,3 +15,22 @@
 //Calling this function max_rot (or maxRot or ... depending on the language)
 //
 //max_rot(56789) should return 68957//
+function maxRot(n) {
+  function rotate(num, hold) {
+    num = num.toString().split('');
+    var shift = num.splice(hold, 1);
+    num.push(shift);    
+    return num.join('');
+  }
+
+  var holder = n,
+      container = [],
+      arr = n.toString().split('');
+
+  for (var i = 0; i < arr.length ; i ++) {
+    holder = rotate(holder, i);
+    container.push(Number(holder));
+  }
+  
+  return container.sort().pop();
+}
