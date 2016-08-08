@@ -5,3 +5,10 @@
 //[10,343445353,3453445,3453545353453] should return 3453455.
 //FUNDAMENTALSARRAYS
 
+function sumTwoSmallestNumbers(numbers) {  
+  var sorted = numbers.sort(function(a,b) { return a - b});
+  var num1 = sorted[0],
+      num2 = sorted[1];
+  
+  return (num1 + num2);
+};
