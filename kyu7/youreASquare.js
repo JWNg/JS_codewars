@@ -21,3 +21,6 @@
 //isSquare(25) // => true
 //isSquare(26) // => false
 //FUNDAMENTALS//
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
