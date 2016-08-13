@@ -19,7 +19,18 @@
 //SimpleInteger is a tiny and immutable implementation of an integer number. Its interface is a very small subset of the java.math.BigInteger API:
 //
 //#add(SimpleInteger val)
-//#subtract(SimpleInteger val)
+//#subtract(SimpleIntegerval)
 //#multiply(SimpleInteger val)
 //#divide(SimpleInteger val)
 //#compareTo(SimpleInteger val)
+
+
+
+var remainder = function(D,d){
+  /*Your Code Goes Here...*/
+  for(var i = 0; (i*d) <= D; i++) {
+    if (D-(i*d) < d) {
+      return (D-(i*d));
+    }
+  }
+}
