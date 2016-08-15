@@ -11,4 +11,7 @@
 //otherwise	'Hello guest'
 //FUNDAMENTALSCONDITIONAL STATEMENTSCONTROL FLOWBASIC LANGUAGE FEATURES
 
-
+function greet (name, owner) {
+  if (name === owner) {return "Hello boss"};
+  return "Hello guest";
+}
