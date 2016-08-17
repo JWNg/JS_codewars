@@ -14,3 +14,10 @@
 //new_avg([14, 30, 5, 7, 9, 11, 15], 2) should raise an error (ValueError or invalid_argument)
 //FUNDAMENTALSARITHMETICMATHEMATICSALGORITHMSNUMBERS
 
+function newAvg(arr, newavg) {
+  var currentTotal = arr.reduce(function(total,num){return(total+num)}),
+      length = arr.length,
+      diff = (newavg *(length + 1)) - currentTotal; 
+
+  return diff;  
+}
