@@ -15,3 +15,14 @@
 //
 //with the above data your function gps(x, s)should return 74
 //FUNDAMENTALS
+
+
+function gps(sec, arr) {
+  if (arr.length <= 1 ) {return 0};
+  var diff = [];
+  for (let i = 0; i < (arr.length-1) ; i ++) {
+    diff.push((arr[(i+1)] - arr[i]));
+  }
+  var sortDiff = diff.sort((a,b) => { return a-b});
+  return (sortDiff.pop()/(sec/3600));
+}
