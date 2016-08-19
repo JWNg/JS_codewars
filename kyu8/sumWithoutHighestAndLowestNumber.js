@@ -19,3 +19,9 @@
 //FUNDAMENTALSBASIC LANGUAGE FEATURES
 
 
+function sumArray(array) {
+  array = array.sort((a,b)=>{return a - b});
+  array.pop();
+  array.shift();
+  return array.reduce((sum, fig) => {return sum + fig})
+}
