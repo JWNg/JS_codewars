@@ -37,4 +37,26 @@
 //
 //I'm aware that there are better ways to create linked lists (class methods, reference pointers, etc.), but not all languages have the same features. I'd like to keep the basic API consistent between language translations for this kata.
 //FUNDAMENTALSLINKED LISTSLISTSDATA STRUCTURES
+//
+//function push(head, data) {
+//  return new Node(data, head);
+//}
+//
+//function buildOneTwoThree() {
+//  return [3, 2, 1].reduce( (head, data) => push(head, data), null );
+//}
+//
+//function Node(data, next = null) {
+//  this.data = data;
+//  this.next = next;
+//}
+
+
+var push = (head, data) => new Node(data, head);
+
+var build = (...args) => args.reduce(push, null);
+
+var buildOneTwoThree = build.bind(null, 3, 2, 1);
+
+var Node = (data, next = null) => ( {data, next} );
 
