@@ -36,3 +36,28 @@
 //Inspired by Stanford Professor Nick Parlante's excellent Linked List teachings.
 
 
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function length(head) {
+  if (head === null || head.data === null) { return 0 };
+  var i = 0;
+  do { 
+  i += 1;
+  head = head.next;
+  } while ( head != null);
+  return i
+}
+
+function count(head, data) {
+  if (head === null || head.data === null) { return 0 };
+  var i = 0;
+  do { 
+  if (head.data === data) { i += 1 }
+  head = head.next;
+  } while ( head != null);
+  return i
+}
+
