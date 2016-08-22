@@ -5,3 +5,7 @@
 //FUNDAMENTALSCONDITIONAL STATEMENTSCONTROL FLOWBASIC LANGUAGE FEATURES//
 
 
+function plural(n) {
+  if (n === 1) { return false };
+  return true; 
+}
