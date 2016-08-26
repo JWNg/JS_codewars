@@ -5,5 +5,5 @@
 //3.3424 is rounded 3.34
 //
 function twoDecimalPlaces(n) {
-  return n.toPrecision(2)
+  return n.toFixed(2);
 }
