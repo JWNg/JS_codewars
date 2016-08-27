@@ -2,3 +2,9 @@
 
 //Here's a (Ruby) resource if you get stuck: http://www.rubycuts.com/enum-all
 //FUNDAMENTALSARRAYS//
+function all( arr, fun ){
+  for (var i = 0 ; i <= arr.length; i ++) { 
+    if (!(fun(i))) { return false }; 
+  } 
+  return true;
+}
