@@ -7,3 +7,7 @@ function remainder(a, b){
   if ( a >= b ) { return a%b }
   return b%a
 }
+
+function remainder(a, b){
+  return a > b ? a % b : b % a;
+}
