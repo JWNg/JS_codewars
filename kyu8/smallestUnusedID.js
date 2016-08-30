@@ -11,4 +11,8 @@
 //Go on and code some pure awesomeness!
 //ALGORITHMSFUNDAMENTALS
 
-
+function nextId(ids){
+  for (var i = 0; i <= (ids.length); i ++) {
+    if (!ids.includes(i)){ return i} 
+  }
+}
