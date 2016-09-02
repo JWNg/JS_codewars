@@ -6,3 +6,14 @@
 //
 //Note : Content is in fact not necessary in the body of the function "evaporator", you can use it or not use it, as you wish. Some people might prefer to reason with content, some other with percentages only. It's up to you but you must keep it as a parameter because the tests have it as an argument.
 //FUNDAMENTALS
+
+function evaporator(content, evap_per_day, threshold){ 
+  var stop = threshold * 0.01 * content,
+      amount = content,
+      remaining_percentage = (1 - (evap_per_day*0.01));
+
+  for (var i = 1; amount >= stop; i ++ ) {
+    amount = Math.pow(remaining_percentage, i) * content;
+  } 
+  return i-1;
+}
