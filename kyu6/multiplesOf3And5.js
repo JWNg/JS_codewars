@@ -7,3 +7,10 @@
 //Note: If the number is a multiple of both 3 and 5, only count it once.
 //Courtesy of ProjectEuler.net
 
+function solution(number){
+  if (number <= 3) {return 0}
+  var container = []
+  for (var i = 1; i < number ; i ++ ) { 
+  if (i%3 === 0 || i%5 === 0) { container.push(i) } }
+  return container.reduce((prev, curr) => prev + curr );
+}
