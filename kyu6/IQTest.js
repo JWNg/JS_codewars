@@ -13,6 +13,6 @@
 function iqTest(numbers){
   var arr = numbers.split(' '),
       even  = arr.filter((value) => {return (value%2 === 0)}),
-      differs = (even.length === 1 ? even[0] : (arr.filter((value) => {return (value%2 ===1)})) )
-  return arr.indexOf(differs[0])+1;
+      differs = (even.length === 1 ? even[0] : (arr.filter((value) => {return (value%2 ===1)})[0]) )
+  return arr.indexOf(differs)+1;
 }
