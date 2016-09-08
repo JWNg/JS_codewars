@@ -8,3 +8,8 @@
 //
 //For n=4 the divisors are [1,2,4] – 'odd'
 //ALGORITHMSNUMBERSMATHEMATICS
+
+function oddity(n){
+  if ((Math.sqrt(n)%1) === 0) { return "odd"}
+  return "even"
+}
