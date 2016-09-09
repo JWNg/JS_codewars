@@ -5,3 +5,10 @@
 //formatWords(['ninja', 'samurai', 'ronin']) // should return "ninja, samurai and ronin"
 //formatWords(['ninja', '', 'ronin']) // should return "ninja and ronin"
 //formatWords([]) // should return ""
+
+
+function formatWords(words){
+  words = words.filter(obj => {return obj != ''})
+  var end = words.splice(-1)
+  return words.join(', ') + ` and ${end}`
+}
