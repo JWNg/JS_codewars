@@ -34,3 +34,7 @@
 //sortGiftCode "pqksuvy"                     -- => returns "kpqsuvy"
 //sortGiftCode "zyxwvutsrqponmlkjihgfedcba"  -- => returns "abcdefghijklmnopqrstuvwxyz"
 //FUNDAMENTALSHACKING HOLIDAYSSORTINGALGORITHMSSTRINGS
+
+function sortGiftCode(code){
+  return code.split('').sort().join('');
+}
