@@ -22,3 +22,11 @@
 //No doubt, an easy kata to warm up before doing the more complex ones. Enjoy it!
 //FUNDAMENTALSDATA STRUCTURESMATHEMATICSALGORITHMSNUMBERS
 
+function process2Arrays(arr1, arr2) {
+  let arr = [], a = [...new Set(arr1.filter(a=>arr2.indexOf(a) === -1))], b = [...new Set(arr2.filter(a=>arr1.indexOf(a) === -1))];
+  arr.push((arr1.filter(a=>arr2.indexOf(a) != -1) || []).length);
+  arr.push((a || []).length + (b || []).length);
+  arr.push((a || []).length);
+  arr.push((b || []).length);
+  return arr;
+}
