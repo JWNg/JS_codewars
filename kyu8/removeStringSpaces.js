@@ -4,3 +4,5 @@
 function noSpace(x){
   return x.split('').filter((l) => {return l !== ' '}).join('')
 }
+
+const noSpace = (str) => str.replace(/\s*/g, '');
