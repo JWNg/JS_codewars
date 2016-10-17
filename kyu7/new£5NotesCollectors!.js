@@ -7,3 +7,7 @@ Given a salary and the array of bills, calculate your disposable income for a mo
 £££ GOOD LUCK! £££
 ALGORITHMSARRAYSLISTSDATA STRUCTURES
 
+function getNewNotes(salary,bills){
+  var totalBills = (bills.length > 0 ? bills.reduce((total, bill) => { return total + bill }) : 0 )
+  return (salary-totalBills) > 0 ? Math.floor((salary-totalBills)/5,1) : 0
+}
