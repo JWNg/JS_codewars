@@ -14,7 +14,8 @@ Note: For this kata I decided to remplace the normal Diamonds and Toads by some 
 FUNDAMENTALSSTRINGSNUMBERSCONTROL FLOW
 
 function findAndCount (find, sentence) {
-  return sentence.split('').count(find)
+  var arr = sentence.split('')
+  return arr.filter((letter) => {if(letter === find) {return letter}}).length
 }
 
 function diamondsAndToads(sentence,fairy){
@@ -32,4 +33,4 @@ function diamondsAndToads(sentence,fairy){
   obj["python"] = PpCount;
   return obj  
 }
-undefined
+
