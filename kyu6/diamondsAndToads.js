@@ -34,3 +34,7 @@ function diamondsAndToads(sentence,fairy){
   return obj  
 }
 
+function diamondsAndToads(s,good){
+  const ct=c=>s.split(c).length-1+(s.split(c.toUpperCase()).length-1)*2
+  return good=="good"?{ruby: ct("r"), crystal: ct("c")}:{python:ct("p"), squirrel:ct("s")}
+}
