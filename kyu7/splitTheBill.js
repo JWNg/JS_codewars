@@ -1,7 +1,7 @@
 
 Description:
 
-It's tricky keeping track of who is owed what when spending money in a group. Write a function to balance the books.
+Its tricky keeping track of who is owed what when spending money in a group. Write a function to balance the books.
 
 The function should take one parameter: an object/dict with two or more name-value pairs which represent the members of the group and the amount spent by each.
 The function should return an object/dict with the same names, showing how much money the members should pay or receive.
@@ -23,6 +23,8 @@ var group = {
 
 splitTheBill(group) // returns {A: 5, B: 0, C: -5}
 FUNDAMENTALSOBJECT-ORIENTED PROGRAMMINGNUMBERSDATA STRUCTURESCONTROL FLOWBASIC LANGUAGE FEATURES
+
+
 const splitTheBill = x => {
   let vals = Object.values(x),
       avg  = vals.reduce((s, v) => s + v) / vals.length;
