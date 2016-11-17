@@ -22,3 +22,7 @@ function keepOrder(ary, val) {
   var index = ary.findIndex((num) => {return num >= val});
   return index >= 0 ? index : ary.length;
 }
+
+function keepOrder(ary, val) {
+  return ary.filter(a => a < val).length;
+}
