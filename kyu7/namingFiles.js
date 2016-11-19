@@ -32,3 +32,8 @@ Also check out my other creations — Elections: Weighted Average, Identify Case
 
 If you notice any issues or have any suggestions/comments whatsoever, please don't hesitate to mark an issue or just comment. Thanks!
 FUNDAMENTALS
+
+
+function nameFile(fmt, nbr, start) {
+  return nbr <= 0 || start % 1 !== 0 || nbr % 1 !== 0 ? [] : Array(nbr).fill(0).map((_, i) => fmt.replace(/\<index\_no\>/g, start + i));
+}
