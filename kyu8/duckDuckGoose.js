@@ -1,6 +1,6 @@
 Description:
 
-The objective of 'Duck, duck, goose' is to walk in a circle, tapping on each player's head until one is finally chosen. 
+The objective of 'Duck, duck, goose' is to walk in a circle, tapping on each players head until one is finally chosen. 
 
 Task: Given an array of Player objects (an array of associative arrays in PHP) and an index (1-based), return the name of the chosen Player. 
 
