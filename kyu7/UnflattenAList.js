@@ -38,10 +38,11 @@ ALGORITHMSBASIC LANGUAGE FEATURESFUNDAMENTALSMATHEMATICSNUMBERSARRAYS
 
 
 function unflatten (flatArray){
-  for(var i = 0; i<= flatArray.length; i++){
-    if (flatArray[i] > 2){
-      flatArray.splice(i, flatArray[i], flatArray.slice(flatArray[i], (flatArray[i]*2)));
-    } 
+  for (var i = 0; i < flatArray.length; i++) {
+    if (flatArray[i]>2){
+      let num = flatArray[i];
+      flatArray.splice(i, num, flatArray.slice(i, (i+num)));
+    }
   }
   return flatArray;
 }
