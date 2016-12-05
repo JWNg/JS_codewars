@@ -31,7 +31,7 @@ Steps:
 There is a harder version of this kata!
 Unflatten a list (Harder than easy)
 
-Have fun coding it and please don't forget to vote and rank this kata! :-)
+Have fun coding it and please dont forget to vote and rank this kata! :-)
 
 I have created other katas. Have a look if you like coding and challenges.
 ALGORITHMSBASIC LANGUAGE FEATURESFUNDAMENTALSMATHEMATICSNUMBERSARRAYS
