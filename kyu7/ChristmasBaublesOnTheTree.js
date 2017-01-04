@@ -1,4 +1,7 @@
-
+function baublesOnTree(baubles, branches){
+  return branches > 0 ? Array.from({length: branches}, () => Math.ceil(baubles--/branches))
+                      : 'Grandma, we will have to buy a Christmas tree first!';
+}
 
 Description:
 
