@@ -26,3 +26,10 @@ Help Suzuki rake his garden!
 Suzuki needs help lining up his students!
 How many stairs will Suzuki climb in 20 years?
 ALGORITHMS
+
+function choreAssignment(chores) {
+ return chores.sort((a,b) => a-b)
+  .map((cur, idx) => cur + chores[chores.length-idx-1])
+  .splice(chores.length/2, chores.length/2)
+  .sort((a,b) => a-b);
+}
