@@ -22,3 +22,10 @@ n = 3
   '---'
 ]
 ALGORITHMSSTRINGSARRAYS
+
+function box(n) {
+  const outB = '-'.repeat(n);
+  const inB = `-${' '.repeat(n-2)}-`;
+
+  return [outB, ...Array(n-2).fill(inB), outB];
+}
