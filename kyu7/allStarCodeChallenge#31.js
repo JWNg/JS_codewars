@@ -37,3 +37,7 @@ helpJesse(recipe);
 // "Pour 100 mL of Water into a Erlenmeyer Flask (Do NOT mess this step up, Jesse!)"]
 Note:
 Assume all keys in the Instruction objects are properly filled and do not need to be checked for format or value type.
+
+function helpJesse(array){
+  return array.map(a => "Pour " + a.amount + " mL of " + a.solution + " into a " + a.instrument + (a.hasOwnProperty("note") ? (" ("+a.note+")") : ""));
+}
