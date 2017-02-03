@@ -16,3 +16,18 @@ var shots = ["500ml","2l","1.4l"];
 
 //output must be in same format.
 vodkaConsumption(shots) //must return "3900ml" or "4l"
+
+
+function vodkaConsumption(shots){
+  function LToMl(amount) {
+    if(amount.match(/ml/)) { 
+      return parseInt(amount.replace(/ml/, ''))
+      } else { 
+      return amount.replace(/l/, '') * 1000
+    }
+  }
+  
+  let shotsInMl = shots.map(LToMl)
+  let totalMl = shotsInMl.reduce((sum, next)=>{return sum + next})
+  return totalMl + 'ml'
+}
