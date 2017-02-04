@@ -2,7 +2,7 @@ Description:
 
 Task
 
-Let's define digit degree of some positive integer as the number of times we need to replace this number with the sum of its digits until we get to a one digit number.
+Lets define digit degree of some positive integer as the number of times we need to replace this number with the sum of its digits until we get to a one digit number.
 
 Given an integer n, find its digit degree.
 Example
@@ -19,3 +19,11 @@ Input/Output
 Constraints: 5 ≤ n ≤ 109.
 [output] an integer
 PUZZLESGAMES
+
+function digitDegree(n, count=0) {
+  while(n>9){
+    n = +n.toString().split('').reduce((s, v) => s + +v, 0);
+    count++;
+  }
+  return count;
+}
