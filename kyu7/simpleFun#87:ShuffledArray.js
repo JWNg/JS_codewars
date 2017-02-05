@@ -32,3 +32,10 @@ Constraints:
 
 A sorted array of shuffled.length - 1 elements.
 PUZZLESGAMES
+
+function shuffledArray(shuffled) {
+  let sumOfArray = shuffled.reduce((accum, element)=>{return accum + element})/2;
+  let indexOfSum = shuffled.indexOf(sumOfArray);
+  shuffled.splice(indexOfSum, 1);
+  return shuffled.sort((first,second)=>{return first-second});
+}
