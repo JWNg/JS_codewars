@@ -23,3 +23,8 @@ Constraints: 1 ≤ n < 10000.
 
 The area of the n-interesting polygon.
 PUZZLESGAMES
+
+
+function shapeArea(n) {
+  return n ** 2 + (n - 1) ** 2;
+}
