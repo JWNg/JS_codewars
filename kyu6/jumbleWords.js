@@ -12,3 +12,14 @@ requirements:
 
 If you solve this kata,check how many percent of changeable words you have changed.If you reach 100% you will get a reward!
 FUNDAMENTALSSTRINGSALGORITHMS
+
+
+function jumble(string){
+  function jumbleWord(word){
+      if (word.length <=2) {return word}
+      var splitWord = word.split('');
+      return [splitWord[0], splitWord[splitWord.length-2] ,...splitWord.slice(1, splitWord.length-2), splitWord[splitWord.length-1] ].join('')
+  }
+  var splitString = string.split(/\b/);
+  return ( splitString.map(jumbleWord).join(''))  
+}
