@@ -17,3 +17,5 @@ Note
 
 Please don't post issue about difficulty or duplicate.
 FUNDAMENTALS
+
+ const remove = s => s.replace(/!+/g, "")+"!";
