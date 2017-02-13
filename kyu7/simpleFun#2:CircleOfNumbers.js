@@ -24,3 +24,7 @@ Constraints: 4 ≤ n ≤ 1000.
 Constraints: 0 ≤ firstNumber ≤ n - 1
 [output] an integer
 PUZZLESGAMES
+
+function circleOfNumbers(n, firstNumber) {
+    return ((n/2) + firstNumber)% n;
+}
