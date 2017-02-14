@@ -14,3 +14,7 @@ For example,
 '658776' to [65, 87, 76] and then turn it into 'AWL'.
 Good Luck!
 FUNDAMENTALSASCIICHARACTER ENCODINGSFORMATSNUMBERS
+
+function convert(number) {
+  return String.fromCharCode(...number.match(/../g))
+}
