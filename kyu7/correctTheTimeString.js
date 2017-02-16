@@ -18,3 +18,11 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 I have created other katas. Have a look if you like coding and challenges.
 FUNDAMENTALSPARSINGALGORITHMSSTRINGSBASIC LANGUAGE FEATURES
+
+function timeCorrect(str) {
+  const date = new Date(); 
+  if (str == '') return str;
+  if (!/^\d{2}\:\d{2}\:\d{2}$/g.test(str)) return null;
+  date.setUTCHours(...str.split(':'));
+  return date.toLocaleTimeString('en', {hour12: false});
+}
