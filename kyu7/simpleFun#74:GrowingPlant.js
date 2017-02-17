@@ -28,6 +28,7 @@ Constraints: 4 ≤ desiredHeight ≤ 1000.
 The number of days that it will take for the plant to reach/pass desiredHeight (including the last day in the total count).
 ALGORITHMS
 
+
 function growingPlant(upSpeed, downSpeed, desiredHeight) {  
   var i = 1;
   for (var height = upSpeed; height < desiredHeight; height = height + upSpeed){
