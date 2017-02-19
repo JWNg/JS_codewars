@@ -27,3 +27,15 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 I have created other katas. Have a look if you like coding and challenges.
 ALGORITHMSBASIC LANGUAGE FEATURESFUNDAMENTALSMATHEMATICSNUMBERS
+
+function numbersWithDigitInside(x, d) {
+  var myNumbers = [];
+  for(let i=1; i <= x;i++) myNumbers.push(i);
+  var targetNumbers = myNumbers.map(String).filter(element=>element.includes(d));
+  if(targetNumbers.length === 0) return [0,0,0];
+  return [
+   targetNumbers.length 
+  ,targetNumbers.map(Number).reduce((a,b)=>a+b)
+  ,targetNumbers.map(Number).reduce((a,b)=>a*b)
+    ]             
+}
