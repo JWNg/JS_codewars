@@ -6,7 +6,7 @@ Remove HTML tags and return string without:
 2) <tag/>
 3) <tag />
 4) html tags with attributes.
-Don't trim space, tab etc.
+Dont trim space, tab etc.
 
 You have to use regexp.
 
@@ -14,3 +14,5 @@ Tests are using function:
 String.prototype.replace(your regexp, "")
 
 Have fun :)
+
+var reg = /<.+?>/g
