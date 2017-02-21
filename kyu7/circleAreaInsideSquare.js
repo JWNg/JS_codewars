@@ -15,3 +15,5 @@ You don't have to worry about error handling or negative number input: size >= 0
 
 This kata might be simpler than you expect, but good luck!
 ALGORITHMSSHAPE MODELINGGRAPHICSMATHEMATICSNUMBERSGEOMETRYALGEBRA
+
+const squareAreaToCircle = (size) => Math.pow((Math.sqrt(size)/2), 2) * Math.PI
