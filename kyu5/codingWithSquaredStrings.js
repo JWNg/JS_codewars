@@ -39,3 +39,13 @@ Notes:
 Swift : character 11 is replaced by "\u{F7}" (ie "÷" - alt 246 -)
 Don't use this coding to keep your secrets:-)
 FUNDAMENTALSSTRINGS
+
+function code(s) {
+  const n = Math.ceil(Math.sqrt(s.length));
+  s += '\v'.repeat(n*n - s.length);
+  return Array.from({length: n}, (_, r) => Array.from({length: n}, (_, c) => s[n*(n - c - 1) + r]).join('')).join('\n');
+}
+function decode(s) {
+  const ss = s.split('\n'), n = ss[0].length;
+  return Array.from({length: n}, (_, r) => Array.from({length: n}, (_, c) => ss[c][n - r - 1]).join('')).join('').replace(/\v/g, '');
+}
