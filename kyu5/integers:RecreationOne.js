@@ -12,3 +12,25 @@ list_squared(1, 250) --> [[1, 1], [42, 2500], [246, 84100]]
 list_squared(42, 250) --> [[42, 2500], [246, 84100]]
 The form of the examples may change according to the language, see Example Tests: for more details.
 FUNDAMENTALSALGORITHMSOPTIMIZATION
+
+function listSquared(m, n) {
+    var container = [];
+    for (var i = m; i < n; i++) {
+        let squaredDivisors = listOfSquaredDivisors(i);
+        let sum = squaredDivisors.reduce((accum,num)=>{return accum + num})
+        if (Math.sqrt(sum)%1 == 0) { container.push([i, sum]) }
+    }
+    return(container);
+
+}
+
+function listOfSquaredDivisors(number) {
+    var divisors = [];
+    for (var i = 1; i <= (Math.sqrt(number)); i++) {
+        if (number%i == 0){
+            divisors.push(i*i);
+            if(i != (number/i)) {divisors.push((number/i)*(number/i))};
+        }
+    } 
+    return divisors;
+}
