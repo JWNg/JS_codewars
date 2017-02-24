@@ -24,3 +24,16 @@ In that case the returned structure of C will have its sz component equal to 0. 
 
   sqInRect(5, 5) should return null
 PUZZLESFUNDAMENTALSGEOMETRYALGEBRAMATHEMATICSALGORITHMS
+
+function sqInRect(lng, wdth){
+    if (lng == wdth) {
+        return null
+    } else {
+        let newLng = lng - (lng > wdth? wdth: 0 );
+        let newWdth = wdth - (lng < wdth? lng: 0 );
+        let addition = (lng > wdth? wdth: lng);
+        return newLng == newWdth && newLng == addition ?
+            [addition, newLng]:
+            [addition].concat(sqInRect(newLng, newWdth));            
+    }
+}
