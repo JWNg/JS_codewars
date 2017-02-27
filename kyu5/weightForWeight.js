@@ -12,3 +12,30 @@ When two numbers have the same "weight", let us class them as if they were strin
 
 All numbers in the list are positive numbers and the list can be empty.
 ALGORITHMSNUMBERS
+
+function orderWeight(string) {
+    let weights = string.split(' ').sort(compare);
+    return weights.reduce((accum, current)=>{return accum+' '+current});
+}
+
+function sumStringWeight(stringNum){
+    return stringNum.split('').reduce((accum, current)=>{return parseInt(accum) + parseInt(current)})
+}
+
+function compare(first, second) {
+    if (sumStringWeight(first) > sumStringWeight(second)) {
+        return 1
+    } 
+    if (sumStringWeight(first) < sumStringWeight(second)) {
+        return -1
+    } else {
+        if (first < second){
+            return -1
+        }
+        if (first > second){
+            return 1
+        } else {
+            return 0
+        }    
+    }    
+}
