@@ -44,3 +44,25 @@ Caesar Cipher : http://en.wikipedia.org/wiki/Caesar_cipher
 FUNDAMENTALSCIPHERSALGORITHMSCRYPTOGRAPHYSECURITYSTRINGSUTILITIES
 
 Poweredby_qualified
+
+
+var upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', downAlpha = 'abcdefghijklmnopqrstuvwxyz';
+function movingShift(s, dist) {return split(shift(s, dist, 1));}
+function demovingShift(arr, dist) {return shift(arr.join(''), -dist, -1);}
+
+function shift(s, dist, step) {
+  return s.split('').map(function(v, i) {
+    var upI = upAlpha.indexOf(v), downI = downAlpha.indexOf(v);
+    if(upI == -1 && downI == -1) return v;
+    if(upI > -1) var lib = upAlpha, libI = upI;
+    else var lib = downAlpha, libI = downI;
+    var loc = (i * step + libI + dist) % 26;
+    loc = loc >= 0 ? loc : 26 + loc;
+    return lib[loc];
+  }).join('');
+}
+
+function split(s) {
+  var sz = Math.ceil(s.length / 5);
+  return [s.slice(0, sz), s.slice(sz, sz * 2), s.slice(sz * 2, sz * 3), s.slice(sz * 3, sz * 4), s.slice(sz * 4)];
+}
