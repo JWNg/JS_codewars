@@ -4,7 +4,7 @@ John keeps a backup of his old personal phone book as a text file. On each line 
 
 Unfortunately everything is mixed, things are not always in the same order, lines are cluttered with non-alpha-numeric characters.
 
-Examples of John's phone book lines:
+Examples of Johns phone book lines:
 
 "/+1-541-754-3010 156 Alphand_St. <J Steeve>\n"
 
