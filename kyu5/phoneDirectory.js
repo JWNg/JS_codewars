@@ -36,6 +36,32 @@ Note
 Codewars stdout doesn't print part of a string when between < and >
 FUNDAMENTALS STRINGS
 
+function phone(strng, num) {
+
+  let lines = strng.split('\n')
+  let index = -1
+
+  for (let i = 0, l = lines.length; i < l; i++) {
+    if (lines[i].indexOf(num) !== -1) {
+      if (index !== -1)
+        return ("Error => Too many people: " + num)
+      index = i
+    }
+  }
+  
+  if (index === -1)
+    return ("Error => Not found: " + num)
+    
+  let name = lines[index].match(/<([^>]+)>/)[1]
+  let address = lines[index].replace("+"+num,'')
+                  .replace(`<${name}>`,'')
+                  .replace(/[^\w-. ]/g,'')
+                  .replace(/_/g,' ')
+                  .replace(/^ +| +$| (?= )/g,'')
+  
+  return `Phone => ${num}, Name => ${name}, Address => ${address}`
+}
+
 function phone(dr, num) {
     var drArray = dr.split("\n");
     
