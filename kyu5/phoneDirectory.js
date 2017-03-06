@@ -35,3 +35,22 @@ Note
 
 Codewars stdout doesn't print part of a string when between < and >
 FUNDAMENTALS STRINGS
+
+function phone(dr, num) {
+    var drArray = dr.split("\n");
+    
+    //check for too many people and number not found
+    if (checkMatchCount(drArray, num) === 0 || checkMatchCount(drArray, num) === 2 ) { return (checkMatchCount(drArray, num) === 0 ? 
+        "Error => Not found: " + num
+        :   "Error => Too many people: " + num )
+    };
+    
+    var entryStr = findEntry(drArray, num);
+    var address = entryStr.replace(/<.+>/g, '').replace(new RegExp(num, 'g'), '').match(/[\da-zA-Z\.]/g).join('')
+    console.log(address);
+    return "Phone => " + num + ", Name => " + findName(entryStr, num) + ", Address => " + address;
+}
+
+const checkMatchCount = (drArray, num) => drArray.filter((entry)=>{return entry.match(new RegExp(num, 'g'))}).length;
+const findEntry = (drArray, num) => {return drArray.filter((entry)=>{ return entry.match(new RegExp(num, 'g'))})[0]};
+const findName = (entryStr, num) => entryStr.match(/<.+>/g)[0].slice(1, -1);
