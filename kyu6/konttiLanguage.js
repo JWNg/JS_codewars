@@ -6,3 +6,7 @@ For example the word lamppu becomes komppu-lantti; aeiou becomes koeiou-antti an
 
 Write a string method that turns a sentence into a kontti sentence!
 FUNDAMENTALSREGULAR EXPRESSIONSDECLARATIVE PROGRAMMINGADVANCED LANGUAGE FEATURESSTRINGS
+
+String.prototype.kontti = function(){
+  return this.replace(/([^ aeiouy]*[aeiouy])([a-z]*)/g,"ko$2-$1ntti");
+}
