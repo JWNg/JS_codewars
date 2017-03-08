@@ -47,3 +47,39 @@ Note
 
 All paths can't be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
 FUNDAMENTALS
+
+
+function dirReduc(arr){
+    if(containsUnreasonableMove(arr)){
+        let newArr = removeFirstUnreasonablePair(arr);
+        return dirReduc(newArr);
+    } else {
+        return arr;
+    }
+}
+
+function containsUnreasonableMove(arr){
+    for(i = 0; i <arr.length; i++){
+        if (findUnreasonableMove(arr[i], arr[i+1])){return true}
+    }
+}
+
+function removeFirstUnreasonablePair(arr){
+    for(i = 0; i <arr.length; i++) {
+        if(findUnreasonableMove(arr[i], arr[i+1])){
+            arr.splice(i, 2)
+            return arr
+        }
+    }
+    return arr;
+}
+
+function findUnreasonableMove(currentMove, nextMove){
+    if((currentMove === "NORTH" && nextMove === "SOUTH")||(nextMove === "NORTH" && currentMove === "SOUTH")){
+        return true
+    } else if ((currentMove === "EAST" && nextMove === "WEST")||(currentMove === "WEST" && nextMove === "EAST")) {
+        return true
+    } else {
+        return false
+    }    
+}
