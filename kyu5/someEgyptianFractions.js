@@ -30,3 +30,18 @@ If the numerator parses to zero the function "decompose" returns [] (or "").
 The number could also be a decimal which can be expressed as a rational (ex: 0.6 in Ruby, Python, Clojure,JS, CS or "66" "100" in Haskell, Java, CSharp, C++, C, Swift).
 Ref: http://en.wikipedia.org/wiki/Egyptian_fraction
 FUNDAMENTALS
+
+function decompose(n) {
+  var [a, b] = isNaN(n) ? n.split('/').map(Number) : [Number(n), 1], res = [];
+  while(a%1) [a, b] = [a*10, b*10];
+  if (a>b) {
+    res.push(String(a/b>>0));
+    a %= b;
+  }
+  while(a>0){
+    var dv = Math.ceil(b/a);
+    res.push('1/'+dv);
+    [a, b] = [a*dv-b, b*dv];
+  }
+  return res;
+}
