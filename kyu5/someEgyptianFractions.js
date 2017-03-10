@@ -8,7 +8,7 @@ as a string (example: "2/3" in Ruby, Python, Clojure, JS, CS) or as two strings 
 
 The algorithm must be "greedy", so at each stage the new rational obtained in the decomposition must have a denominator as small as possible. In this manner the sum of a few fractions in the decomposition gives a rather good approximation of the rational to decompose.
 
-2/3 = 1/3 + 1/3 doesn't fit because of the repetition but also because the first 1/3 has a denominator bigger than the one in 1/2 in the decomposition 2/3 = 1/2 + 1/6.
+2/3 = 1/3 + 1/3 doesnt fit because of the repetition but also because the first 1/3 has a denominator bigger than the one in 1/2 in the decomposition 2/3 = 1/2 + 1/6.
 
 Example: (You can see other examples in "Test Examples")
 
