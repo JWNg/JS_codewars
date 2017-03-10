@@ -25,3 +25,15 @@ Updates
 
 26/10/2015: Added a higher precision test case.
 PUZZLES MATHEMATICS ALGORITHMS
+
+function bouncyRatio(pc) {
+  if (pc < 0 || pc > .99) throw new Error();
+  let i = 100, cnt = 0;
+  while(cnt/i < pc){
+    i++;
+    let r = [0,0,0], s = i.toString(), prev = s[0];
+    for(let d of s.slice(1)) r[1+Math.sign(d-prev)] = 1, prev = d;
+    cnt += r[0] * r[2];
+  }
+  return i;
+}
