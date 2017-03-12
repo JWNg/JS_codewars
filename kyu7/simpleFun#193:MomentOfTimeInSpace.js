@@ -36,3 +36,25 @@ The moment of time and space that the input time came from.
 
 Array of three elements, two of which are false, and one is true. The true value should be at the 1st, 2nd or 3rd place for past, present and future respectively.
 FUNDAMENTALS
+
+function momentOfTimeInSpace(moment) {
+
+  moment = moment.split('');
+  var numbers = '123456789'.split('');
+  var time = 0;
+  var space = 0;
+
+  for(var i = 0 ; i < moment.length ; i++){
+    if(numbers.includes(moment[i])){
+      time += Number(moment[i]);
+    }else{
+      space++;
+    }
+  }
+
+  var past = (time < space);
+  var present = (time === space);
+  var future = (time > space);
+
+  return [past, present, future];
+}
