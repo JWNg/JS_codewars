@@ -8,7 +8,7 @@ They have chosen the following rules:
 
 On day n the number of katas done by Ann should be n minus the number of katas done by John at day t, t being equal to the number of katas done by Ann herself at day n - 1.
 On day n the number of katas done by John should be n minus the number of katas done by Ann at day t, t being equal to the number of katas done by John himself at day n - 1.
-Whoops! I think they need to lay out a little clearer exactly what there're getting themselves into!
+Whoops! I think they need to lay out a little clearer exactly what therere getting themselves into!
 
 Could you write:
 
