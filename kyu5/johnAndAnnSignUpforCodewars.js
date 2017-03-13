@@ -23,3 +23,18 @@ sum_john(75) -->  1720
 sum_ann(150) -->  6930
 Note: Keep an eye on performance.
 ALGORITHMSRULESMATHEMATICS
+
+let annKatas = [1], johnKatas = [0];
+function upToDayDay(n){
+  let day = annKatas.length;
+  while (day < n) {
+    johnKatas.push(day - annKatas[johnKatas[day-1]]);
+    annKatas.push(day - johnKatas[annKatas[day-1]]);
+    day++;
+  }
+  return n;
+}
+let john = n => johnKatas.slice(0, upToDayDay(n)),
+    ann  = n => annKatas.slice(0, upToDayDay(n)),
+    sumJohn = n => john(n).reduce((x, y) => x + y, 0),
+    sumAnn  = n => ann(n).reduce((x, y) => x + y, 0);
