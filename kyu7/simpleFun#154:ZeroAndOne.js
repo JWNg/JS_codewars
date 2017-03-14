@@ -7,7 +7,7 @@ You have a string of length n consisting of zeroes and ones. Consider the follow
 Choose any two adjacent positions in the string
 If one of them is 0, and the other one is 1, 
 remove these two digits from the string.
-What's the smallest length string that you can get after applying this operation multiple times?
+Whats the smallest length string that you can get after applying this operation multiple times?
 Example
 
 For s = "01010", the result should be 1.
@@ -28,3 +28,6 @@ The initial string.
 
 The minimum length of the string that may remain after applying the described operations several times.
 PUZZLESGAMES
+
+const zeroAndOne = s => s.replace(/(01|10)/g, '').length
+
