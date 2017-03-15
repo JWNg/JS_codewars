@@ -11,3 +11,13 @@ NOTE: Pay attention that last brackets are left empty to indicate end of operati
 
 Thanks to @JohanWiltink, @donaldsebleung
 PUZZLESARITHMETICMATHEMATICSALGORITHMSNUMBERSGAMES
+
+function sum(n){
+  let x = 0;
+  var add = function(n){
+    if(isNaN(n)) return x;
+    x += n;
+    return add;
+  }
+  return add(n);
+}
