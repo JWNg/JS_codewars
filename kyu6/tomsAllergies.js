@@ -34,3 +34,15 @@ Ensure that your function throws a TypeError for invalid inputs such as None(Nul
 
 Hint: Use Bitwise ANDing
 FUNDAMENTALSALGORITHMS
+
+function Allergies(score){
+  if(!Number.isInteger(score)) throw ";-)"
+  
+  this.all=["eggs","peanuts","shellfish","strawberries","tomatoes","chocolate","pollen","cats"]
+  
+  this.has=score.toString(2).split("").reverse().reduce((a,b,i)=>b=="1"&&this.all[i]?a.concat(this.all[i]):a,[]).sort((a,b)=>a.localeCompare(b))
+  
+  this.isAllergicTo=function(a){return this.has.includes(a)}
+
+  this.allergies=function(){return this.has}
+}
