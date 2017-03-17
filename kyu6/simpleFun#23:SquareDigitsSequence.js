@@ -9,7 +9,7 @@ Example
 
 For a0 = 16, the output should be 9
 
-Here's how elements of the sequence are constructed:
+Heres how elements of the sequence are constructed:
 
 a0 = 16
 
