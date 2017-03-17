@@ -65,3 +65,15 @@ function squareDigitsSequenceRecursion(a0, previousElements){
     }
 }
 const splitSquareSum = (n) => (n+'').split('').reduce((accum, current)=>{return Math.pow(parseInt(current), 2) + parseInt(accum)},0)
+
+
+====================================
+function squareDigitsSequence(a0) {
+  const getNext = n => +n.toString().split('').reduce((s, v) => s + v*v, 0);
+  var map = [];
+  do {
+    map.push(a0);
+    a0 = getNext(a0);
+  }while(map.indexOf(a0) === -1)
+  return map.length + 1;
+}
