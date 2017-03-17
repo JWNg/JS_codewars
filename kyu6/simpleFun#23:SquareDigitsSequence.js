@@ -43,3 +43,25 @@ First element of a sequence, positive integer.
 Constraints: 1 ≤ a0 ≤ 650.
 [output] an integer
 PUZZLESGAMES
+
+
+
+function squareDigitsSequence(a0) { 
+    var previousElements = [];
+    squareDigitsSequenceRecursion(a0, previousElements);
+    return previousElements.length
+
+}
+
+function squareDigitsSequenceRecursion(a0, previousElements){
+    if(previousElements.includes(a0)) {
+        return previousElements.push(a0).length
+    } else {
+        let an = splitSquareSum(a0);        
+        previousElements.push(a0);
+        console.log(previousElements);
+        console.log(an);
+        return squareDigitsSequenceRecursion(an, previousElements);
+    }
+}
+const splitSquareSum = (n) => (n+'').split('').reduce((accum, current)=>{return Math.pow(parseInt(current), 2) + parseInt(accum)},0)
