@@ -26,3 +26,7 @@ A non-empty string of English letters and punctuation marks.
 
 The number of words the boy has read.
 PUZZLES
+
+function timedReading(maxLength, text) {
+  return text.replace(/[^\w\s]/g, "").split(" ").filter( x => x.length <= maxLength & x.length > 0).length
+}
