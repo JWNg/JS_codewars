@@ -46,4 +46,14 @@ Regular expression compression
 Collatz Array(Split or merge)
 Tidy up the room
 Waiting for a Bus
+
+
 PUZZLESGAMES
+
+function sc(str, chars) {
+  for (let char of chars) {
+    let len = RegExp(char).test(str) ? (str.match(RegExp(char+'+','g'))||[]).reduce((l,m)=>Math.min(m.length, l),str.length) : 0;
+    str = len ? str.replace(RegExp(`([^${char}]|^)${char}{${len}}([^${char}]|$)`),`$1${char.repeat(len+1)}$2`) : str + char;
+  }
+  return str;
+}
