@@ -34,3 +34,5 @@ An array in the same format as a.
 
 The similarity of the arrays.
 PUZZLESGAMES
+
+const similarity = (arr, b) => arr.filter(c => b.includes(c)).length / new Set(a.concat(b)).size
