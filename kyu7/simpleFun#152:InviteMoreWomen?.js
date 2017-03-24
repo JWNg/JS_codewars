@@ -18,3 +18,5 @@ An array (guaranteed non-associative in PHP) representing the genders of the att
 
 true if Arthur need to invite more women, false otherwise.
 PUZZLESGAMES
+
+const inviteMoreWomen = L => L.reduce((a,b) => a+b) > 0
