@@ -22,3 +22,6 @@ Input/Output
 
 The maximum number of pieces the sliced cake can have.
 PUZZLESGAMES
+
+
+const cakeSlice = n => n === 0 ? 1 : cakeSlice(n-1)+n
