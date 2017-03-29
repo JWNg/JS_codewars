@@ -17,3 +17,11 @@ Constraints: 3 ≤ arr.length ≤ 1000, 1 ≤ arr[i] ≤ 1000.
 
 Array containing answer values computed as described above.
 PUZZLESGAMES
+
+function arrayPreviousLess(arr) {
+    return arr.map((current, index) => {
+        var previous = arr.slice(0,index)
+        var filtered = previous.filter((val)=>{return val < current}).reverse()
+        return filtered.length === 0 ? -1: filtered[0]
+    })
+}
