@@ -25,3 +25,8 @@ Have fun! And if you enjoy this kata, check out the sequel: Piano Kata, Part 2
 FUNDAMENTALS
 
 const blackOrWhiteKey = keyPressCount => keyPressCount%88 === 0 ? "white" : [2, 4, 6, 9, 11, 14].includes((keyPressCount%88)%12+4) ? "black" : "white"
+
+
+function blackOrWhiteKey(keyPressCount) {    
+    return ['black','white'] [ '101101011010'[((keyPressCount-1)%88)%12] ]
+}
