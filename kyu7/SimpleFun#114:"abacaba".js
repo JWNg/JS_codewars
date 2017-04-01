@@ -24,3 +24,4 @@ Input / Output
 
 the kth symbol of S(26)
 PUZZLESGAMES
+const abacaba = k => String.fromCharCode((k^(k-1)).toString(2).length+96)
