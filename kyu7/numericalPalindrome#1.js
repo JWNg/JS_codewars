@@ -16,3 +16,10 @@ Numerical Palindrome #2
 Numerical Palindrome #3 
 Numerical Palindrome #4
 FUNDAMENTALSNUMBERSINTEGERS
+
+function palindrome(num) { 
+    if (num < 0 || typeof num !== "number" ) { return "Not valid"}
+    
+    var floorHalfLength = Math.floor((num+'').length/2);
+    return (num+'').slice(0,floorHalfLength) === (num+'').split('').reverse().join('').slice(0,floorHalfLength)
+} 
