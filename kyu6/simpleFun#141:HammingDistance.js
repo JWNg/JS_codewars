@@ -22,3 +22,5 @@ Second Number. 1 <= b <= 2^20
 
 Hamming Distance
 PUZZLESGAMES
+
+const hammingDistance = (first, second) => (first ^ second).toString(2).replace(/0/g, '').length
