@@ -1,6 +1,6 @@
 Task
 
-CodeBots decided to make a gift for CodeMaster's birthday. They got a pack of candies of various sizes from the store, but instead of giving the whole pack they are trying to make the biggest possible candy from them. On each turn it is possible:
+CodeBots decided to make a gift for CodeMasters birthday. They got a pack of candies of various sizes from the store, but instead of giving the whole pack they are trying to make the biggest possible candy from them. On each turn it is possible:
 
 to pick any two candies of the same size and merge
 them into a candy which will be two times bigger;
