@@ -28,3 +28,11 @@ Constraints:
 [output] an integer
 
 puzzles games
+
+
+function obtainMaxNumber(arr){
+  const funkDoc = x => (ix.splice(ix.indexOf(x),1), ix.push(x * 2));
+  let ix = [];
+  arr.forEach(e => ix.includes(e) ? funkDoc(e) : ix.push(e));
+  return ix.length === arr.length ? Math.max(...ix) : obtainMaxNumber(ix);
+}
