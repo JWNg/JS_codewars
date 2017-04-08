@@ -27,3 +27,11 @@ Numerical Palindrome #3.5
 Numerical Palindrome #4 
 Numerical Palindrome #5
 FUNDAMENTALSARRAYS
+
+function palindrome(n) {
+   if (n < 0 ||typeof n!='number') return 'Not valid'; else n +=''; 
+   for (var r=[], i=0;i< n.length;i++)
+      for (var j=i+2;j<1+n.length;j++) if ([...s=n.slice(i,j)].reverse().join('')==s) r.push(+s);
+   if (!r[0]) return 'No palindromes found'; else r.sort((a,b)=>a-b);
+   return r.filter((a,i)=>a!=0&&(a+'')[(a+'').length-1]!='0'&&r.indexOf(a)==i)
+}
