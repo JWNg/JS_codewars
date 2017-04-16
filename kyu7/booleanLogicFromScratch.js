@@ -21,3 +21,24 @@ xor(false, true) should return true
 or(true, false) should return true
 or(false, false) should return false
 FUNDAMENTALSBOOLEANS
+
+
+const or = (a, b) => {
+    if (!!a === true) {
+        return true
+    } else if (!!b === true) {
+        return true
+    } else {
+        return false
+    }
+};
+
+const xor = (a, b) => {
+    if (!!a === true && !!b === false) {
+        return true
+    } else if (!!b === true && !!a === false) {
+        return true
+    } else {
+        return false
+    }
+};
