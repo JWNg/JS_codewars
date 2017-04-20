@@ -14,3 +14,12 @@ n will always be a natural number (0, N]
 b > a
 and n will be chosen appropriately given the length of [a, b] (as in I will not have step sizes smaller than machine epsilon)
 FUNDAMENTALSMATHEMATICSALGORITHMSNUMBERS
+
+function left_riemann(f, n, a, b){
+  let sum = 0, x = (b - a) / n, v = a;
+  for(let i = 0; i < n; i++) {
+    sum += f(v);
+    v += x;
+  }
+  return sum * x;
+}
