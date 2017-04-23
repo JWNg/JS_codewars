@@ -28,3 +28,15 @@ maxAndMin([3],[20]) === [17,17]
 maxAndMin([3,10,5],[3,10,5]) === [7,0]
 maxAndMin([1,2,3,4,5],[6,7,8,9,10]) === [9,1]
 ALGORITHMS
+
+const maxAndMin = (arr1,arr2) => {
+    let arr = [];
+    for (i = 0; i < arr1.length; i++) {
+        for (j = 0; j < arr2.length; j++) {
+            arr.push(Math.abs(arr1[i]-arr2[j]));
+        }
+    };
+
+    return [Math.abs(arr1.sort(ascSort)[0] - arr2.sort(ascSort)[(arr2.length-1)]),  arr.sort(ascSort)[0]]
+}
+const ascSort = (a,b) => (a-b <= -1 ? -1 : 1); 
