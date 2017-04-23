@@ -40,3 +40,23 @@ const maxAndMin = (arr1,arr2) => {
     return [Math.abs(arr1.sort(ascSort)[0] - arr2.sort(ascSort)[(arr2.length-1)]),  arr.sort(ascSort)[0]]
 }
 const ascSort = (a,b) => (a-b <= -1 ? -1 : 1); 
+
+function maxAndMin(arr1, arr2) {
+  const cmpAsc = (a, b) => a - b,
+    xs = arr1.slice().sort(cmpAsc), ys = arr2.slice().sort(cmpAsc),
+    maxDiff = Math.max(ys[ys.length - 1] - xs[0], xs[xs.length - 1] - ys[0]);
+  let minDiff = Infinity, ix = 0, iy = 0;
+  while (true /*ix < xs.length && iy < ys.length*/) {
+    for (; xs[ix] <= ys[iy]; ix++)
+      minDiff = Math.min(minDiff, Math.abs(xs[ix] - ys[iy]));
+    if (ix == xs.length)
+      break;
+    minDiff = Math.min(minDiff, Math.abs(xs[ix] - ys[iy]));
+    for (; xs[ix] >= ys[iy]; iy++)
+      minDiff = Math.min(minDiff, Math.abs(xs[ix] - ys[iy]));
+    if (iy == ys.length)
+      break;
+    minDiff = Math.min(minDiff, Math.abs(xs[ix] - ys[iy]));
+  }
+  return [maxDiff, minDiff];
+}
