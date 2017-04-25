@@ -40,3 +40,9 @@ For n = "7496314", the output should be:
 "4"]
 For n = "0", the output should be []
 ALGORITHMS
+
+function splitExp(n) {
+  var [l,r] = n.split('.').map(s=>[...s]); r = r||[];
+  return         l.map((d,i)=>d==='0'?'':d+'0'.repeat(l.length-i-1)).filter(s=>s)
+         .concat(r.map((d,i)=>d==='0'?'':'.'+'0'.repeat(i)+d).filter(s=>s));
+}
