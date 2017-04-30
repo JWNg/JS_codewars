@@ -18,3 +18,10 @@ For s = "fffffahhhhhhaaahhhhbhhahhhhabxx", the output should be "a23".
 
 The maximum distance is formed by the character 'a' from index 5 to index 27 (0-based). Therefore, the answer is "a23".
 FUNDAMENTALS
+
+function distSameLetter(s) {
+  var a = s.split("").filter((c, i) => s.split("").filter((_, j) => j < i).indexOf(c) === -1);
+  var b = a.map(c => s.lastIndexOf(c) - s.indexOf(c) + 1);
+  var m = Math.max(...b);
+  return a[b.indexOf(m)] + m;
+}
