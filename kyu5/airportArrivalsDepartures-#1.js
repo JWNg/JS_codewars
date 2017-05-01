@@ -46,3 +46,23 @@ And don't forget to try my other flap display Katas!
 
 :-)
 ALGORITHMS
+
+const rotorOrder = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ?!@#&()|<>.:=-+*/0123456789".split('');
+
+const nextLetter = (currentLetter, increments) => {
+  let newIndex = (rotorOrder.indexOf(currentLetter) + increments ) % rotorOrder.length
+  return rotorOrder[newIndex]
+}
+
+const flapDisplayLine = (line, rotor) => {
+    var Reduction =  line.split('').reduce((accum, current, index)=>{
+        let previousRotors = (rotor[index]+accum[1])
+        let newLetters = accum[0]+ nextLetter(current, previousRotors)
+        return [ newLetters, previousRotors ]
+    }, ["", 0])
+    return Reduction[0];
+}
+
+const flapDisplay = (lines, rotors) => lines.map((current, index)=>{ return flapDisplayLine(current, rotors[index])})
+
+
