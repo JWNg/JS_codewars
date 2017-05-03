@@ -69,3 +69,44 @@ Good luck and enjoy!
 Kata Series
 
 If you enjoyed this, then please try one of my other Katas. Any feedback, translations and grading of beta Katas are greatly appreciated. Thank you.
+
+
+function Game(board){
+  this.fields = [];
+  
+  for(var i=0;i<board;i++)
+  {
+    for(var j=0;j<board;j++)
+    {
+      this.fields.push([i*(1+board*2) + j+1, i*(1+board*2) + j + 1 + board, i*(1+board*2) + j + 2 + board, i*(1+board*2) + j + 2 + board * 2]);
+    }
+  }    
+}
+
+Game.prototype.play = function(lines){
+  
+  var newLines = lines.slice();
+  while(true)
+  {
+    for(var field of this.fields)
+    {
+      var sum = field.filter(a => lines.includes(a)).length;
+      
+      if(sum == 3)
+      {
+        for(var i=0;i<4;i++)
+        {
+          if(!newLines.includes(field[i]))
+          {
+            newLines.push(field[i]);
+          }
+        }
+      }
+    }
+    if(newLines.length == lines.length)
+    {
+      return newLines.sort((a,b) => a-b);
+    }
+    lines = newLines.slice();    
+  }
+}
