@@ -8,3 +8,13 @@ The returned word should be all lowercase letters.
 if you can't find one of the letters using the index numbers, return "No mission today". Jenny would be very sad, but that's life... :(
 Example: input: [5, 0, 3], "I Love You" output: "ivy" (0 = "i", 3 = "v", 5 = "y")
 FUNDAMENTALSSTRINGSARRAYSALGORITHMSBASIC LANGUAGE FEATURES
+
+
+function missingWord(nums, str) {
+    let spaceRemovedStr = str.split('').filter(letter=> letter != " ").join('')
+    let sortedNums = nums.sort((a,b)=>{return a-b < 0 ? -1: 1})
+    if (sortedNums[0] < 0 || sortedNums[sortedNums.length-1] > spaceRemovedStr.length) {
+        return "No mission today"
+    }
+    return sortedNums.map(num => spaceRemovedStr[num].toLowerCase()).join('')
+}
