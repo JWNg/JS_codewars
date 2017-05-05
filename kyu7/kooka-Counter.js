@@ -15,3 +15,7 @@ The females go hahaha...
 And they always alternate male/female
 ^ Kata Note : No validation is necessary; only valid input will be passed :-)
 ALGORITHMSSTRINGS
+
+var kookaCounter = function(laughing) {
+  return (laughing.match(/(Ha)+|(ha)+/g) || []).length;
+}
