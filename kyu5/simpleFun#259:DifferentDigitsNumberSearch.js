@@ -40,3 +40,12 @@ function duplicates(n) {
 
     return (n+'') === newString ? true : false;
 }
+
+
+
+
+function differentDigitsNumberSearch(arr) {
+  return arr.find(x => x.toString().split('').length == new Set(x.toString().split('')).size) || -1
+  
+  
+}
