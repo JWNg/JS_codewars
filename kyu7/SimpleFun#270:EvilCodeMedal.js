@@ -46,3 +46,16 @@ userTime = "01:15:00", gold = "00:15:00",
 silver = "00:45:00" and bronze = "01:15:00"
 the output should be "None"
 PUZZLESGAMES
+
+function evilCodeMedal(userTime, gold, silver, bronze) {
+if( userTime < gold ){
+return "Gold";
+}
+else if ( userTime < silver ){
+return "Silver";
+}
+else if ( userTime < bronze ){
+return "Bronze";
+}
+return "None";
+}
