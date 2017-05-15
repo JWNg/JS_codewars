@@ -41,3 +41,16 @@ const shiftLetter = (index, shift) => {
 }
 
 const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
+
+
+====================================
+function CaesarCryptoEncode(text, shift) {
+  if (!text) return '';
+  shift = (shift % 52 + 52) % 52; // convert shift to positive equivalent
+  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return text.trim().replace(/[a-z]/ig, c => letters[(letters.indexOf(c) + shift) % 52]);
+}
+
+// or, shorter version
+// const CaesarCryptoEncode=(t,s)=>t?t.trim()
+//   .replace(/[a-z]/ig,c=>(l='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')[(((l.indexOf(c)+s)%52)+52)%52]):'';
