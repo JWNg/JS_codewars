@@ -18,3 +18,26 @@ shift could be either positive or negative (for left shift);
 If the input text is empty, null or includes only whitespaces, return an empty string.
 Time's ticking away. The life of Caesar is on the chopping block! Go for it!
 ALGORITHMS FUNDAMENTALS CRYPTOGRAPHY SECURITY
+
+
+function CaesarCryptoEncode(text, shift) {
+    if(!text || text.trim().length === 0 ) {
+        return ""
+    }
+    
+    return text.split('').map(letter =>{
+        let index = alphabet.indexOf(letter)
+        if( index >= 0 ){
+            return shiftLetter(index, shift)
+        } else {
+            return letter
+        }
+    }).join('')
+}
+
+const shiftLetter = (index, shift) => { 
+    let newIndex = (index+shift)%52;
+    return newIndex >= 0 ? alphabet[newIndex] : alphabet[(52+newIndex)]
+}
+
+const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
