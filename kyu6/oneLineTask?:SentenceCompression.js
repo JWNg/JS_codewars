@@ -24,3 +24,5 @@ For s = 'I\'m supposed to be playing CodeWars but this one player keeps kicking 
 
 Digits are also removed.
 PUZZLESGAMES
+
+sentenceCompression=s=>s.replace(/\d|\W/gi,'')
