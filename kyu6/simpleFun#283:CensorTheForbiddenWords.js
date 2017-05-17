@@ -24,3 +24,7 @@ Example
 
 For text = "The cat does not like the fire" and forbiddenWords = ["cat","fire"], the output should be "The *** does not like the ****".
 FUNDAMENTALS
+
+function censorThis(text, forbiddenWords) {
+  return forbiddenWords.reduce((t,w)=>t.replace(new RegExp(`\\b${w}\\b`,'ig'),'*'.repeat(w.length)),text);
+}
