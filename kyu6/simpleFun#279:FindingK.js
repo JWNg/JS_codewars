@@ -32,3 +32,13 @@ For arr = [5, 2, 8], the output should be 3.
 
 5 % 3 == 2 % 3 == 8 % 3 == 2
 ALGORITHMS
+
+function findingK(a) {
+    let gcd2 = (a, b) => !b ? a : gcd2(b, a % b);
+    let gcd = (a) => a.reduce(gcd2, a[0]);
+    let flatten = (a) => [].concat.apply([], a);
+    let distinct = (a) => Array.from(new Set(a));
+
+    a = distinct(a).sort((x, y) => x >= y);
+    return a.length == 1 ? -1 : gcd(flatten(a.map((x, i) => a.slice(i + 1).map(y => y - x))))
+}
