@@ -43,3 +43,14 @@ Where the elements are as follows
 You will need to output the full 16 digit driving license number.
 
 Good luck and enjoy!
+ 
+ function driver(data) {
+    var surname = (data[2].length < 5 ? data[2].slice(0,data[2].length)+('9').repeat(5-data[2].length):data[2].slice(0,5).toUpperCase()) 
+    var decadeDigit = data[3].match(/-\d+/g)[0][3]
+    var date = new Date(data[3])
+    var month = date.getMonth()+ 50 + 1
+    var day = (date+'').slice(8,10)
+    var year = (date+'').slice(14,15)
+    var firstMiddle = data[0].slice(0,1).toUpperCase() + (data[1] === '' ? "9": data[1].slice(0,1).toUpperCase())
+    return surname + decadeDigit + month + day + year + firstMiddle + "9AA"
+}
