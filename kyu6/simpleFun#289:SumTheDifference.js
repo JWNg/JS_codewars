@@ -52,3 +52,24 @@ odd digits sum up to 5 - 7 + 5 + 5 = 8;
 
 their difference is 0 - 8 = -8.
 FUNDAMENTALS
+
+
+function sumtheDifference(equation) {  
+    var even = equation.split('').filter(c => c !== ' ').reduce((accum, val, index, eqn)=>{
+        if(!!val.match(/\d/) && val.match(/\d/)[0]%2 === 0){
+            return (eqn[index-1] === '-'? - (parseInt(val)): (parseInt(val))) + accum 
+        } else {
+            return accum
+        }
+    }, 0)
+    
+    var odd = equation.split('').filter(c => c !== ' ').reduce((accum, val, index, eqn)=>{
+        if(!!val.match(/\d/) && val.match(/\d/)[0]%2 !== 0){
+            return (eqn[index-1] === '-'? - (parseInt(val)): (parseInt(val))) + accum 
+        } else {
+            return accum
+        }
+    }, 0)
+    
+    return even - odd
+}
