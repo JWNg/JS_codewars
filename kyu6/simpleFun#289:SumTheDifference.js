@@ -73,3 +73,15 @@ function sumtheDifference(equation) {
     
     return even - odd
 }
+
+function sumtheDifference(equation) {
+  let sum = 0;
+  
+  equation
+    .replace(/\s+/g, '')
+    .replace(/-?(\d)/g, (n, d) => {
+      sum += (d % 2 ? -1 : 1) * n
+    });
+    
+  return sum;
+}
