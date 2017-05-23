@@ -39,3 +39,17 @@ function add(n){
   
   return fn;
 }
+
+Examples
+Using valueOf
+
+function myNumberType(n) {
+    this.number = n;
+}
+
+myNumberType.prototype.valueOf = function() {
+    return this.number;
+};
+
+myObj = new myNumberType(4);
+myObj + 3; // 7
