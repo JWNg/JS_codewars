@@ -36,3 +36,18 @@ For s = "Aa", the output should be 4.
 
 John hit button Caps Lock, A, Caps Lock, a.
 FUNDAMENTALS
+
+    
+ function typist(s){
+    return s.split('').reduce((accum, current, index, array)=>{
+        if (index === 0 && current.toUpperCase() === current) {
+            return accum +=2
+        } else if (index === 0 && current.toLowerCase() === current) {
+            return accum +=1
+        } else if ((current.toLowerCase() === current && array[index-1] !== array[index-1].toLowerCase()) || (current.toUpperCase() === current && array[index-1] !== array[index-1].toUpperCase())) {
+            return accum +=2
+        } else {
+            return accum +=1
+        }
+    }, 0)
+}
