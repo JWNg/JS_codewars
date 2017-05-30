@@ -14,4 +14,12 @@ ALGORITHMSFUNCTIONAL PROGRAMMINGDECLARATIVE PROGRAMMINGARRAYS
 
 Poweredby_qualified
 
-const takeWhile = (arr, pred) => arr.filter((element, index)=>{return arr.indexOf(element) === index && pred(element)})
+function takeWhile (arr, pred) {
+    var container = [];
+    var i = 0;
+    while(pred(arr[i]) && i === arr.indexOf(arr[i])){
+        container.push(arr[i]);
+        i+=1
+    }
+    return container
+}
