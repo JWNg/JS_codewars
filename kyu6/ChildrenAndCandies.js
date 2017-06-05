@@ -45,3 +45,12 @@ So, we need return: [17,18]
 
 distributionOfCandy([10,2,8,22,16,4,10,6,14,20]) === [17,18]
 FUNDAMENTALSPUZZLESGAMES
+
+function distributionOfCandy(candies, currentDistribution=0){
+    if(new Set(candies).size !== 1){
+        var newCandies = candies.map((current)=>{return current%2===1? current+1 : current}).map((current, index, arr)=>{return index === 0 ? (current/2)+(arr[arr.length-1]/2):(current/2)+(arr[index-1]/2);});
+        return distributionOfCandy(newCandies, currentDistribution+=1)
+    } else {
+        return [currentDistribution,candies[0]]
+    }
+}
