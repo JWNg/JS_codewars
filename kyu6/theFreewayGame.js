@@ -34,3 +34,6 @@ There may be a temptation to try to beat your previous best score.
 
 Please don't do that...
 ALGORITHMS
+var freewayGame = function(d, s1, o) {
+  return o.reduce( (z,[t,s2]) => z + ((ds,dt) => ~~(t < 0 && ds > dt) || -(t > 0 && ds < dt) || 0 )(t/60*s2,(s2-s1)*d/s1), 0 );
+}
