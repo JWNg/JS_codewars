@@ -33,3 +33,10 @@ For s = "-c--b--a-", the output should be "-a--b--c-".
 
 For s = "Codewars", the output should be "aCdeorsw".
 ALGORITHMS
+
+
+function sortString(s) {
+  const a = s.replace(/[^a-z]/gi, '').split('').map((c, i) => [c, c.toUpperCase(), i]).sort((a, b) => a[1] != b[1] ? a[1].localeCompare(b[1]) : a[2]-b[2]);
+  var i = 0;
+  return s.replace(/[a-z]/gi, c => a[i++][0]);
+}
