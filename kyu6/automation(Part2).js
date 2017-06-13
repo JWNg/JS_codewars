@@ -29,3 +29,18 @@ Other episodes from series:
 Automaton (Part 1)
 Automaton (Part 3)
 BUGS
+
+
+function automaton(e) {
+	if (typeof e === "string") {
+		return e.replace(/[^aeiuo]/gi, "").length;
+	} else if (typeof e === "number") {
+		if (Math.round(e) != e) return false;
+		for (var i = 2; i < e; i++) if (e % i < 1) return false;
+		return true;
+	} else if (typeof e === "object") {
+		var a = {};
+		for (var k in e) a[e[k]] = k + "";
+		return a;
+	}
+}
