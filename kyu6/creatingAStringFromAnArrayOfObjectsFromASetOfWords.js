@@ -12,3 +12,10 @@ As a result you'll have a string you may just copy-paste whenever you feel like 
 
 It is also possible to make a function which would return a list of objects - another approach, deserving, as I believe, another kata.
 FUNDAMENTALSSTRINGSREGULAR EXPRESSIONSDECLARATIVE PROGRAMMINGADVANCED LANGUAGE FEATURES
+
+
+function wordsToObject(input) {
+    return input.split(' ').reduce((accum,current, index, arr)=>{
+        return index % 2 === 0 ? accum: accum.concat({"name": arr[index-1], "id": current});
+    }, [])
+}
