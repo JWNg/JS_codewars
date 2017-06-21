@@ -12,3 +12,13 @@ start - position to begin sorting
 length - number of items to sort (optional)
 if the length argument is not passed or is zero, you sort all items to the right of the start postiton in the array
 ALGORITHMSARRAYSSORTINGDATA STRUCTURES
+function ascendingSort(a, b) { return a - b; }
+
+function sectSort(arr, start, length) {
+  var len = (length || arr.length) + start;
+  return [].concat(
+    arr.slice(0, start),
+    arr.slice(start, len).sort(ascendingSort),
+    arr.slice(len)
+  );
+}
