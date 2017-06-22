@@ -14,3 +14,15 @@ Give you a 2D array ```wall```:
 The above example should return ```25```, because the maximum square that can be found is ```5X5```
 
 Please see more example in testcases.
+function max(wall){
+  var max = 0;
+  for(let j=0; j<wall.length; j++) for(let i=0; i<wall[0].length; i++) if(wall[j][i]===' ') {
+    let submax = 1;
+    for(let blocked=false;; submax++) {
+      for(let k=0; k<=submax; k++) if((!wall[j+submax]||wall[j+submax][i+k]!==' ')||(!wall[j+k]||wall[j+k][i+submax]!==' ')) blocked = true;
+      if(blocked) break;
+    }
+    max = Math.max(max, submax);
+  }
+  return max*max;
+}
