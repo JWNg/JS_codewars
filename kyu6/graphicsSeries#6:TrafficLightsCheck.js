@@ -48,3 +48,15 @@ Graphics Series:
 #5: The rope is burning
 #6: Traffic lights check
 PUZZLESGAMES
+
+
+function checkLights({red,yellow,green}){
+  const colors = [/^#(a[a-f]|[b-f][0-9a-f])0000$/,/^#(a[a-f]|[b-f][0-9a-f]){2}00$/,/^#00(a[a-f]|[b-f][0-9a-f])00$/],
+      steps = [['yellow','','',''],['','green','','red'],['','','yellow','']],
+      valid = [red,yellow,green].every((e,i) => {
+        return e.radius >= 9.5 && e.radius <= 10.5 &&
+          colors[i].test(e.color) &&
+          steps[i].every((v,c) => e[`step${c+1}`] === v)});
+  
+  return valid ? 'qualified' : 'not qualified'
+}
