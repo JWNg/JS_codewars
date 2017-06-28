@@ -45,3 +45,12 @@ N < 250 (N, number of tests)
 10^(-17) ≤ abs_error ≤ 0.001
 Enjoy it!
 FUNDAMENTALSDATA STRUCTURESALGORITHMSMATHEMATICSNUMBERSRECURSIONCOMPUTABILITY THEORYTHEORETICAL COMPUTER SCIENCECONTROL FLOWBASIC LANGUAGE FEATURES
+
+const simulCloseTo2 = (arr, absError)=>{
+  for(var rec=0; arr.some((n,i)=>i&&Math.abs(n-arr[i-1])>absError); rec++) {
+    let m=arr.reduce((s,n)=>s+n,0)/arr.length;
+    arr = arr.map(n=>1+n/m);
+  }
+  return rec;
+}
+ 
