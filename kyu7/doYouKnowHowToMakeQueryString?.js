@@ -28,3 +28,7 @@ So, your task is to write a function that convert an object to query string:
 toQueryString({ foo: 1, bar: [ 2, 3 ] }) // => "foo=1&bar=2&bar=3"
 Next you may enjoy kata Objectify a URL Query String.
 ALGORITHMSDATA STRUCTURESSTRINGS
+
+function toQueryString(o) {
+  return [].concat(...Object.keys(o).map(k => Array.isArray(o[k]) ? o[k].map(v => `${k}=${v}`) : `${k}=${o[k]}`)).join`&`;
+}
