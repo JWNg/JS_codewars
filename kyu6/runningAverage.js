@@ -19,3 +19,10 @@ rAvg(10) = 10.0;
 rAvg(11) = 10.5;
 rAvg(12) = 11;
 FUNDAMENTALSCLOSURESBASIC LANGUAGE FEATURES
+function runningAverage() {
+    var sum=0,count=0;
+    return function(current){
+        sum+=current,count+=1;
+        return Math.round((sum/count)*100)/100;
+    }
+}
