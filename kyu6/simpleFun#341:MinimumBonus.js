@@ -42,3 +42,14 @@ For scores = [20,30,10,30,40,10,20,30,40,30], the output should be 20.
 
 The possible bonus amount of each team can be:[1,2,1,2,3,1,2,3,4,1]
 ALGORITHMS
+
+function minimumBonus(scores) {
+  let a = scores.map( () => 1 );
+  for ( let i=1; i in a; i++ )
+    if ( scores[i]>scores[i-1] )
+      a[i] = a[i-1] + 1;
+  for ( let i=a.length-2; i in a; i-- )
+    if ( scores[i]>scores[i+1] )
+      a[i] = Math.max( a[i], a[i+1] + 1 );
+  return a.reduce( (v,w) => v+w , 0 );
+}
