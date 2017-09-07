@@ -28,3 +28,14 @@ The two intersecting lines are:
 (4, 9) intersects with (8,10).
 For start = [1, 2] and end = [3, 4], the output should be 1.
 ALGORITHMS
+
+function lineIntersections(start, end) {
+  var count = 0;
+  for (var cur = 0; end[cur]; cur++) {
+    for (var next = cur + 1; end[next]; next++) {
+      start[cur] <= end[next] &&
+      start[next] <= end[cur] && count++;
+    }
+  }
+  return count;
+}
