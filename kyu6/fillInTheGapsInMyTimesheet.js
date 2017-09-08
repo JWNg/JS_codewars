@@ -35,3 +35,11 @@ Sometimes I forget to note when I stopped working on a project and started on a 
 
 Note for kata translators: The original version was in Ruby.
 ALGORITHMSARRAYS
+const fill_gaps = timesheet =>
+  timesheet.map((v,i,a) => {
+    if (v !== null) return v
+    let j=i-1, k=i+1
+    while (a[j] === null) j--
+    while (a[k] === null) k++
+    return a[j] === a[k] ? a[j] : v
+  })
