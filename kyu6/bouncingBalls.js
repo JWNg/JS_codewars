@@ -24,3 +24,15 @@ h = 3, bounce = 0.66, window = 1.5, result is 3
 
 h = 3, bounce = 1, window = 1.5, result is -1 (Condition 2) not fullfilled).
 FUNDAMENTALS
+
+function bouncingBall(h,  bounce,  window) {
+  if(h<=0||!(bounce<1)||!(bounce>0)||!(window<h)){
+      return -1
+  }
+  let exp = 1;
+  while (h*Math.pow(bounce,exp) > window){
+    h*Math.pow(bounce,exp)
+    exp++
+  }
+  return exp*2-1  
+}
